@@ -3,7 +3,7 @@ import { Appointment } from '.'
 let appointment
 
 beforeEach(async () => {
-  appointment = await Appointment.create({ No: 'test', Patient-Name: 'test', Docter-Name: 'test', Date: 'test', Time: 'test', Departent: 'test' })
+  appointment = await Appointment.create({ No: 'test', PatientName: 'test', DocterName: 'test', Date: 'test', Time: 'test', Departent: 'test' })
 })
 
 describe('view', () => {
@@ -12,8 +12,8 @@ describe('view', () => {
     expect(typeof view).toBe('object')
     expect(view.id).toBe(appointment.id)
     expect(view.No).toBe(appointment.No)
-    expect(view.Patient-Name).toBe(appointment.Patient-Name)
-    expect(view.Docter-Name).toBe(appointment.Docter-Name)
+    expect(view.PatientName).toBe(appointment.PatientName)
+    expect(view.DocterName).toBe(appointment.DocterName)
     expect(view.Date).toBe(appointment.Date)
     expect(view.Time).toBe(appointment.Time)
     expect(view.Departent).toBe(appointment.Departent)
@@ -26,8 +26,8 @@ describe('view', () => {
     expect(typeof view).toBe('object')
     expect(view.id).toBe(appointment.id)
     expect(view.No).toBe(appointment.No)
-    expect(view.Patient-Name).toBe(appointment.Patient-Name)
-    expect(view.Docter-Name).toBe(appointment.Docter-Name)
+    expect(view.PatientName).toBe(appointment.PatientName)
+    expect(view.DocterName).toBe(appointment.DocterName)
     expect(view.Date).toBe(appointment.Date)
     expect(view.Time).toBe(appointment.Time)
     expect(view.Departent).toBe(appointment.Departent)

@@ -7,7 +7,7 @@ const departmentSchema = new Schema({
   Name: {
     type: String
   },
-  Nos. of Doctor: {
+  NoofDoctor: {
     type: String
   }
 }, {
@@ -25,7 +25,7 @@ departmentSchema.methods = {
       id: this.id,
       Id: this.Id,
       Name: this.Name,
-      Nos. of Doctor: this.Nos. of Doctor,
+      NoofDoctor: this.NoofDoctor,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }

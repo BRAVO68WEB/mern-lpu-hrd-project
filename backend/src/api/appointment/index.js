@@ -7,15 +7,15 @@ import { schema } from './model'
 export Appointment, { schema } from './model'
 
 const router = new Router()
-const { No, Patient-Name, Docter-Name, Date, Time, Departent } = schema.tree
+const { No, PatientName, DocterName, Date, Time, Departent } = schema.tree
 
 /**
  * @api {post} /appointments Create appointment
  * @apiName CreateAppointment
  * @apiGroup Appointment
  * @apiParam No Appointment's No.
- * @apiParam Patient-Name Appointment's Patient-Name.
- * @apiParam Docter-Name Appointment's Docter-Name.
+ * @apiParam PatientName Appointment's PatientName.
+ * @apiParam DocterName Appointment's DocterName.
  * @apiParam Date Appointment's Date.
  * @apiParam Time Appointment's Time.
  * @apiParam Departent Appointment's Departent.
@@ -24,7 +24,7 @@ const { No, Patient-Name, Docter-Name, Date, Time, Departent } = schema.tree
  * @apiError 404 Appointment not found.
  */
 router.post('/',
-  body({ No, Patient-Name, Docter-Name, Date, Time, Departent }),
+  body({ No, PatientName, DocterName, Date, Time, Departent }),
   create)
 
 /**
@@ -62,8 +62,8 @@ router.get('/:id',
  * @apiPermission admin
  * @apiParam {String} access_token admin access token.
  * @apiParam No Appointment's No.
- * @apiParam Patient-Name Appointment's Patient-Name.
- * @apiParam Docter-Name Appointment's Docter-Name.
+ * @apiParam PatientName Appointment's PatientName.
+ * @apiParam DocterName Appointment's DocterName.
  * @apiParam Date Appointment's Date.
  * @apiParam Time Appointment's Time.
  * @apiParam Departent Appointment's Departent.
@@ -74,7 +74,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true, roles: ['admin'] }),
-  body({ No, Patient-Name, Docter-Name, Date, Time, Departent }),
+  body({ No, PatientName, DocterName, Date, Time, Departent }),
   update)
 
 /**

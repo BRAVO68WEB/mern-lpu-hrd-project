@@ -51,8 +51,8 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | No			| 			|  <p>Appointment's No.</p>							|
-| Patient-Name			| 			|  <p>Appointment's Patient-Name.</p>							|
-| Docter-Name			| 			|  <p>Appointment's Docter-Name.</p>							|
+| PatientName			| 			|  <p>Appointment's PatientName.</p>							|
+| DocterName			| 			|  <p>Appointment's DocterName.</p>							|
 | Date			| 			|  <p>Appointment's Date.</p>							|
 | Time			| 			|  <p>Appointment's Time.</p>							|
 | Departent			| 			|  <p>Appointment's Departent.</p>							|
@@ -108,8 +108,8 @@
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>admin access token.</p>							|
 | No			| 			|  <p>Appointment's No.</p>							|
-| Patient-Name			| 			|  <p>Appointment's Patient-Name.</p>							|
-| Docter-Name			| 			|  <p>Appointment's Docter-Name.</p>							|
+| PatientName			| 			|  <p>Appointment's PatientName.</p>							|
+| DocterName			| 			|  <p>Appointment's DocterName.</p>							|
 | Date			| 			|  <p>Appointment's Date.</p>							|
 | Time			| 			|  <p>Appointment's Time.</p>							|
 | Departent			| 			|  <p>Appointment's Departent.</p>							|
@@ -150,7 +150,7 @@
 | access_token			| String			|  <p>admin access token.</p>							|
 | Id			| 			|  <p>Department's Id.</p>							|
 | Name			| 			|  <p>Department's Name.</p>							|
-| Nos.			| 			|  <p>of Doctor Department's Nos. of Doctor.</p>							|
+| Nos			| 			|  <p>of Doctor Department's NoofDoctor.</p>							|
 
 ## Delete department
 
@@ -210,7 +210,7 @@
 | access_token			| String			|  <p>admin access token.</p>							|
 | Id			| 			|  <p>Department's Id.</p>							|
 | Name			| 			|  <p>Department's Name.</p>							|
-| Nos.			| 			|  <p>of Doctor Department's Nos. of Doctor.</p>							|
+| Nos			| 			|  <p>of Doctor Department's NoofDoctor.</p>							|
 
 # Doctor
 

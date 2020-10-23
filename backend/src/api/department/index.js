@@ -7,7 +7,7 @@ import { schema } from './model'
 export Department, { schema } from './model'
 
 const router = new Router()
-const { Id, Name, Nos. of Doctor } = schema.tree
+const { Id, Name, NoofDoctor } = schema.tree
 
 /**
  * @api {post} /departments Create department
@@ -17,7 +17,7 @@ const { Id, Name, Nos. of Doctor } = schema.tree
  * @apiParam {String} access_token admin access token.
  * @apiParam Id Department's Id.
  * @apiParam Name Department's Name.
- * @apiParam Nos. of Doctor Department's Nos. of Doctor.
+ * @apiParam NoofDoctor Department's NoofDoctor.
  * @apiSuccess {Object} department Department's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Department not found.
@@ -25,7 +25,7 @@ const { Id, Name, Nos. of Doctor } = schema.tree
  */
 router.post('/',
   token({ required: true, roles: ['admin'] }),
-  body({ Id, Name, Nos. of Doctor }),
+  body({ Id, Name, NoofDoctor }),
   create)
 
 /**
@@ -68,7 +68,7 @@ router.get('/:id',
  * @apiParam {String} access_token admin access token.
  * @apiParam Id Department's Id.
  * @apiParam Name Department's Name.
- * @apiParam Nos. of Doctor Department's Nos. of Doctor.
+ * @apiParam NoofDoctor Department's NoofDoctor.
  * @apiSuccess {Object} department Department's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Department not found.
@@ -76,7 +76,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true, roles: ['admin'] }),
-  body({ Id, Name, Nos. of Doctor }),
+  body({ Id, Name, NoofDoctor }),
   update)
 
 /**

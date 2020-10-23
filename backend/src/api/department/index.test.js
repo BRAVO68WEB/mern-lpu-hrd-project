@@ -20,12 +20,12 @@ beforeEach(async () => {
 test('POST /departments 201 (admin)', async () => {
   const { status, body } = await request(app())
     .post(`${apiRoot}`)
-    .send({ access_token: adminSession, Id: 'test', Name: 'test', Nos. of Doctor: 'test' })
+    .send({ access_token: adminSession, Id: 'test', Name: 'test', NoofDoctor: 'test' })
   expect(status).toBe(201)
   expect(typeof body).toEqual('object')
   expect(body.Id).toEqual('test')
   expect(body.Name).toEqual('test')
-  expect(body.Nos. of Doctor).toEqual('test')
+  expect(body.NoofDoctor).toEqual('test')
 })
 
 test('POST /departments 401 (user)', async () => {
@@ -95,13 +95,13 @@ test('GET /departments/:id 404 (admin)', async () => {
 test('PUT /departments/:id 200 (admin)', async () => {
   const { status, body } = await request(app())
     .put(`${apiRoot}/${department.id}`)
-    .send({ access_token: adminSession, Id: 'test', Name: 'test', Nos. of Doctor: 'test' })
+    .send({ access_token: adminSession, Id: 'test', Name: 'test', NoofDoctor: 'test' })
   expect(status).toBe(200)
   expect(typeof body).toEqual('object')
   expect(body.id).toEqual(department.id)
   expect(body.Id).toEqual('test')
   expect(body.Name).toEqual('test')
-  expect(body.Nos. of Doctor).toEqual('test')
+  expect(body.NoofDoctor).toEqual('test')
 })
 
 test('PUT /departments/:id 401 (user)', async () => {
@@ -120,7 +120,7 @@ test('PUT /departments/:id 401', async () => {
 test('PUT /departments/:id 404 (admin)', async () => {
   const { status } = await request(app())
     .put(apiRoot + '/123456789098765432123456')
-    .send({ access_token: adminSession, Id: 'test', Name: 'test', Nos. of Doctor: 'test' })
+    .send({ access_token: adminSession, Id: 'test', Name: 'test', NoofDoctor: 'test' })
   expect(status).toBe(404)
 })
 

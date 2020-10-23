@@ -4,10 +4,10 @@ const appointmentSchema = new Schema({
   No: {
     type: String
   },
-  Patient-Name: {
+  PatientName: {
     type: String
   },
-  Docter-Name: {
+  DocterName: {
     type: String
   },
   Date: {
@@ -33,8 +33,8 @@ appointmentSchema.methods = {
       // simple view
       id: this.id,
       No: this.No,
-      Patient-Name: this.Patient-Name,
-      Docter-Name: this.Docter-Name,
+      PatientName: this.PatientName,
+      DocterName: this.DocterName,
       Date: this.Date,
       Time: this.Time,
       Departent: this.Departent,

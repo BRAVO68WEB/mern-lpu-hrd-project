@@ -17,14 +17,14 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Patient-Name",
-            "description": "<p>Appointment's Patient-Name.</p>"
+            "field": "PatientName",
+            "description": "<p>Appointment's PatientName.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Docter-Name",
-            "description": "<p>Appointment's Docter-Name.</p>"
+            "field": "DocterName",
+            "description": "<p>Appointment's DocterName.</p>"
           },
           {
             "group": "Parameter",
@@ -326,14 +326,14 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Patient-Name",
-            "description": "<p>Appointment's Patient-Name.</p>"
+            "field": "PatientName",
+            "description": "<p>Appointment's PatientName.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Docter-Name",
-            "description": "<p>Appointment's Docter-Name.</p>"
+            "field": "DocterName",
+            "description": "<p>Appointment's DocterName.</p>"
           },
           {
             "group": "Parameter",
@@ -511,8 +511,8 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Nos.",
-            "description": "<p>of Doctor Department's Nos. of Doctor.</p>"
+            "field": "Nos",
+            "description": "<p>of Doctor Department's NoofDoctor.</p>"
           }
         ]
       }
@@ -834,8 +834,8 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Nos.",
-            "description": "<p>of Doctor Department's Nos. of Doctor.</p>"
+            "field": "Nos",
+            "description": "<p>of Doctor Department's NoofDoctor.</p>"
           }
         ]
       }

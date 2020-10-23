@@ -3,7 +3,7 @@ import { Department } from '.'
 let department
 
 beforeEach(async () => {
-  department = await Department.create({ Id: 'test', Name: 'test', Nos. of Doctor: 'test' })
+  department = await Department.create({ Id: 'test', Name: 'test', NoofDoctor: 'test' })
 })
 
 describe('view', () => {
@@ -13,7 +13,7 @@ describe('view', () => {
     expect(view.id).toBe(department.id)
     expect(view.Id).toBe(department.Id)
     expect(view.Name).toBe(department.Name)
-    expect(view.Nos. of Doctor).toBe(department.Nos. of Doctor)
+    expect(view.NoofDoctor).toBe(department.NoofDoctor)
     expect(view.createdAt).toBeTruthy()
     expect(view.updatedAt).toBeTruthy()
   })
@@ -24,7 +24,7 @@ describe('view', () => {
     expect(view.id).toBe(department.id)
     expect(view.Id).toBe(department.Id)
     expect(view.Name).toBe(department.Name)
-    expect(view.Nos. of Doctor).toBe(department.Nos. of Doctor)
+    expect(view.NoofDoctor).toBe(department.NoofDoctor)
     expect(view.createdAt).toBeTruthy()
     expect(view.updatedAt).toBeTruthy()
   })
