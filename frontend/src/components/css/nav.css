@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap'); */
 *{
     margin: 0;
     padding: 0;
@@ -72,7 +72,7 @@
     text-decoration: none;
     color: white;
     font-size: 18px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
 }
 .listdesign:hover{
     color: gray;
@@ -103,7 +103,7 @@
     outline: none;
     cursor: pointer;
     font-size: 18px;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
 }
 .btn-small{
     padding: 3px 10px;
