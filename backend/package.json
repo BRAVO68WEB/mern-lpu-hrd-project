@@ -1,10 +1,10 @@
 {
   "name": "doctor-apointment",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "src",
   "private": true,
   "scripts": {
-    "start": "node .",
+    "start": "nodemon .",
     "test": "jest",
     "coverage": "npm test -- --coverage",
     "postcoverage": "opn coverage/lcov-report/index.html",
