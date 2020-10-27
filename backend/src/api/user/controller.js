@@ -1,6 +1,5 @@
 import { success, notFound } from '../../services/response/'
 import { User } from '.'
-import { sign } from '../../services/jwt'
 
 export const index = ({ querymen: { query, select, cursor } }, res, next) =>
   User.count(query)
@@ -25,11 +24,8 @@ export const showMe = ({ user }, res) =>
 
 export const create = ({ bodymen: { body } }, res, next) =>
   User.create(body)
-    .then(user => {
-      sign(user.id)
-        .then((token) => ({ token, user: user.view(true) }))
-        .then(success(res, 201))
-    })
+    .then((user) => user.view(true))
+    .then(success(res, 201))
     .catch((err) => {
       /* istanbul ignore else */
       if (err.name === 'MongoError' && err.code === 11000) {

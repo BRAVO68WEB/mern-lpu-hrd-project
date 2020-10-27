@@ -1,10 +1,10 @@
 [
   {
     "type": "post",
-    "url": "/appointments",
-    "title": "Create appointment",
-    "name": "CreateAppointment",
-    "group": "Appointment",
+    "url": "/apointments",
+    "title": "Create apointment",
+    "name": "CreateApointment",
+    "group": "Apointment",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -12,37 +12,49 @@
             "group": "Parameter",
             "optional": false,
             "field": "No",
-            "description": "<p>Appointment's No.</p>"
+            "description": "<p>Apointment's No.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
             "field": "PatientName",
-            "description": "<p>Appointment's PatientName.</p>"
+            "description": "<p>Apointment's PatientName.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
             "field": "DocterName",
-            "description": "<p>Appointment's DocterName.</p>"
+            "description": "<p>Apointment's DocterName.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "Email",
+            "description": "<p>Apointment's Email.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "PhoneNo",
+            "description": "<p>Apointment's PhoneNo.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
             "field": "Date",
-            "description": "<p>Appointment's Date.</p>"
+            "description": "<p>Apointment's Date.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
             "field": "Time",
-            "description": "<p>Appointment's Time.</p>"
+            "description": "<p>Apointment's Time.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Departent",
-            "description": "<p>Appointment's Departent.</p>"
+            "field": "Department",
+            "description": "<p>Apointment's Department.</p>"
           }
         ]
       }
@@ -54,8 +66,8 @@
             "group": "Success 200",
             "type": "Object",
             "optional": false,
-            "field": "appointment",
-            "description": "<p>Appointment's data.</p>"
+            "field": "apointment",
+            "description": "<p>Apointment's data.</p>"
           }
         ]
       }
@@ -74,41 +86,21 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "404",
-            "description": "<p>Appointment not found.</p>"
+            "description": "<p>Apointment not found.</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/appointment/index.js",
-    "groupTitle": "Appointment"
+    "filename": "src/api/apointment/index.js",
+    "groupTitle": "Apointment"
   },
   {
     "type": "delete",
-    "url": "/appointments/:id",
-    "title": "Delete appointment",
-    "name": "DeleteAppointment",
-    "group": "Appointment",
-    "permission": [
-      {
-        "name": "admin",
-        "title": "Admin access only",
-        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "access_token",
-            "description": "<p>admin access token.</p>"
-          }
-        ]
-      }
-    },
+    "url": "/apointments/:id",
+    "title": "Delete apointment",
+    "name": "DeleteApointment",
+    "group": "Apointment",
     "success": {
       "fields": {
         "Success 204": [
@@ -128,27 +120,21 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "404",
-            "description": "<p>Appointment not found.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "401",
-            "description": "<p>admin access only.</p>"
+            "description": "<p>Apointment not found.</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/appointment/index.js",
-    "groupTitle": "Appointment"
+    "filename": "src/api/apointment/index.js",
+    "groupTitle": "Apointment"
   },
   {
     "type": "get",
-    "url": "/appointments/:id",
-    "title": "Retrieve appointment",
-    "name": "RetrieveAppointment",
-    "group": "Appointment",
+    "url": "/apointments/:id",
+    "title": "Retrieve apointment",
+    "name": "RetrieveApointment",
+    "group": "Apointment",
     "success": {
       "fields": {
         "Success 200": [
@@ -156,8 +142,8 @@
             "group": "Success 200",
             "type": "Object",
             "optional": false,
-            "field": "appointment",
-            "description": "<p>Appointment's data.</p>"
+            "field": "apointment",
+            "description": "<p>Apointment's data.</p>"
           }
         ]
       }
@@ -176,38 +162,60 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "404",
-            "description": "<p>Appointment not found.</p>"
+            "description": "<p>Apointment not found.</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/appointment/index.js",
-    "groupTitle": "Appointment"
+    "filename": "src/api/apointment/index.js",
+    "groupTitle": "Apointment"
   },
   {
     "type": "get",
-    "url": "/appointments",
-    "title": "Retrieve appointments",
-    "name": "RetrieveAppointments",
-    "group": "Appointment",
-    "permission": [
-      {
-        "name": "admin",
-        "title": "Admin access only",
-        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+    "url": "/apointments",
+    "title": "Retrieve apointments",
+    "name": "RetrieveApointments",
+    "group": "Apointment",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "count",
+            "description": "<p>Total amount of apointments.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "rows",
+            "description": "<p>List of apointments.</p>"
+          }
+        ]
       }
-    ],
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/apointment/index.js",
+    "groupTitle": "Apointment",
     "parameter": {
       "fields": {
         "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "access_token",
-            "description": "<p>admin access token.</p>"
-          },
           {
             "group": "Parameter",
             "type": "String",
@@ -250,108 +258,64 @@
           }
         ]
       }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "count",
-            "description": "<p>Total amount of appointments.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "rows",
-            "description": "<p>List of appointments.</p>"
-          }
-        ]
-      }
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "type": "Object",
-            "optional": false,
-            "field": "400",
-            "description": "<p>Some parameters may contain invalid values.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "401",
-            "description": "<p>admin access only.</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "src/api/appointment/index.js",
-    "groupTitle": "Appointment"
+    }
   },
   {
     "type": "put",
-    "url": "/appointments/:id",
-    "title": "Update appointment",
-    "name": "UpdateAppointment",
-    "group": "Appointment",
-    "permission": [
-      {
-        "name": "admin",
-        "title": "Admin access only",
-        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
-      }
-    ],
+    "url": "/apointments/:id",
+    "title": "Update apointment",
+    "name": "UpdateApointment",
+    "group": "Apointment",
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "access_token",
-            "description": "<p>admin access token.</p>"
-          },
-          {
-            "group": "Parameter",
             "optional": false,
             "field": "No",
-            "description": "<p>Appointment's No.</p>"
+            "description": "<p>Apointment's No.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
             "field": "PatientName",
-            "description": "<p>Appointment's PatientName.</p>"
+            "description": "<p>Apointment's PatientName.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
             "field": "DocterName",
-            "description": "<p>Appointment's DocterName.</p>"
+            "description": "<p>Apointment's DocterName.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "Email",
+            "description": "<p>Apointment's Email.</p>"
+          },
+          {
+            "group": "Parameter",
+            "optional": false,
+            "field": "PhoneNo",
+            "description": "<p>Apointment's PhoneNo.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
             "field": "Date",
-            "description": "<p>Appointment's Date.</p>"
+            "description": "<p>Apointment's Date.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
             "field": "Time",
-            "description": "<p>Appointment's Time.</p>"
+            "description": "<p>Apointment's Time.</p>"
           },
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Departent",
-            "description": "<p>Appointment's Departent.</p>"
+            "field": "Department",
+            "description": "<p>Apointment's Department.</p>"
           }
         ]
       }
@@ -363,8 +327,8 @@
             "group": "Success 200",
             "type": "Object",
             "optional": false,
-            "field": "appointment",
-            "description": "<p>Appointment's data.</p>"
+            "field": "apointment",
+            "description": "<p>Apointment's data.</p>"
           }
         ]
       }
@@ -383,20 +347,14 @@
             "group": "Error 4xx",
             "optional": false,
             "field": "404",
-            "description": "<p>Appointment not found.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "401",
-            "description": "<p>admin access only.</p>"
+            "description": "<p>Apointment not found.</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/appointment/index.js",
-    "groupTitle": "Appointment"
+    "filename": "src/api/apointment/index.js",
+    "groupTitle": "Apointment"
   },
   {
     "type": "post",
@@ -475,7 +433,7 @@
   },
   {
     "type": "post",
-    "url": "/departments",
+    "url": "/Departments",
     "title": "Create department",
     "name": "CreateDepartment",
     "group": "Department",
@@ -499,8 +457,8 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Id",
-            "description": "<p>Department's Id.</p>"
+            "field": "ID",
+            "description": "<p>Department's ID.</p>"
           },
           {
             "group": "Parameter",
@@ -512,7 +470,7 @@
             "group": "Parameter",
             "optional": false,
             "field": "Nos",
-            "description": "<p>of Doctor Department's NoofDoctor.</p>"
+            "description": "<p>Department's Nos.</p>"
           }
         ]
       }
@@ -556,35 +514,15 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/department/index.js",
+    "filename": "src/api/Department/index.js",
     "groupTitle": "Department"
   },
   {
     "type": "delete",
-    "url": "/departments/:id",
+    "url": "/Departments/:id",
     "title": "Delete department",
     "name": "DeleteDepartment",
     "group": "Department",
-    "permission": [
-      {
-        "name": "admin",
-        "title": "Admin access only",
-        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "access_token",
-            "description": "<p>admin access token.</p>"
-          }
-        ]
-      }
-    },
     "success": {
       "fields": {
         "Success 204": [
@@ -605,46 +543,20 @@
             "optional": false,
             "field": "404",
             "description": "<p>Department not found.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "401",
-            "description": "<p>admin access only.</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/department/index.js",
+    "filename": "src/api/Department/index.js",
     "groupTitle": "Department"
   },
   {
     "type": "get",
-    "url": "/departments/:id",
+    "url": "/Departments/:id",
     "title": "Retrieve department",
     "name": "RetrieveDepartment",
     "group": "Department",
-    "permission": [
-      {
-        "name": "admin",
-        "title": "Admin access only",
-        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "access_token",
-            "description": "<p>admin access token.</p>"
-          }
-        ]
-      }
-    },
     "success": {
       "fields": {
         "Success 200": [
@@ -673,43 +585,59 @@
             "optional": false,
             "field": "404",
             "description": "<p>Department not found.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "401",
-            "description": "<p>admin access only.</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/department/index.js",
+    "filename": "src/api/Department/index.js",
     "groupTitle": "Department"
   },
   {
     "type": "get",
-    "url": "/departments",
+    "url": "/Departments",
     "title": "Retrieve departments",
     "name": "RetrieveDepartments",
     "group": "Department",
-    "permission": [
-      {
-        "name": "admin",
-        "title": "Admin access only",
-        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "count",
+            "description": "<p>Total amount of departments.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "rows",
+            "description": "<p>List of departments.</p>"
+          }
+        ]
       }
-    ],
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/Department/index.js",
+    "groupTitle": "Department",
     "parameter": {
       "fields": {
         "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "access_token",
-            "description": "<p>admin access token.</p>"
-          },
           {
             "group": "Parameter",
             "type": "String",
@@ -752,78 +680,22 @@
           }
         ]
       }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "count",
-            "description": "<p>Total amount of departments.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "rows",
-            "description": "<p>List of departments.</p>"
-          }
-        ]
-      }
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "type": "Object",
-            "optional": false,
-            "field": "400",
-            "description": "<p>Some parameters may contain invalid values.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "401",
-            "description": "<p>admin access only.</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "src/api/department/index.js",
-    "groupTitle": "Department"
+    }
   },
   {
     "type": "put",
-    "url": "/departments/:id",
+    "url": "/Departments/:id",
     "title": "Update department",
     "name": "UpdateDepartment",
     "group": "Department",
-    "permission": [
-      {
-        "name": "admin",
-        "title": "Admin access only",
-        "description": "<p>You must pass <code>access_token</code> parameter or a Bearer Token authorization header to access this endpoint.</p>"
-      }
-    ],
     "parameter": {
       "fields": {
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "String",
             "optional": false,
-            "field": "access_token",
-            "description": "<p>admin access token.</p>"
-          },
-          {
-            "group": "Parameter",
-            "optional": false,
-            "field": "Id",
-            "description": "<p>Department's Id.</p>"
+            "field": "ID",
+            "description": "<p>Department's ID.</p>"
           },
           {
             "group": "Parameter",
@@ -835,7 +707,7 @@
             "group": "Parameter",
             "optional": false,
             "field": "Nos",
-            "description": "<p>of Doctor Department's NoofDoctor.</p>"
+            "description": "<p>Department's Nos.</p>"
           }
         ]
       }
@@ -868,23 +740,17 @@
             "optional": false,
             "field": "404",
             "description": "<p>Department not found.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "401",
-            "description": "<p>admin access only.</p>"
           }
         ]
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/department/index.js",
+    "filename": "src/api/Department/index.js",
     "groupTitle": "Department"
   },
   {
     "type": "post",
-    "url": "/doctors",
+    "url": "/Doctors",
     "title": "Create doctor",
     "name": "CreateDoctor",
     "group": "Doctor",
@@ -908,8 +774,8 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Id",
-            "description": "<p>Doctor's Id.</p>"
+            "field": "ID",
+            "description": "<p>Doctor's ID.</p>"
           },
           {
             "group": "Parameter",
@@ -920,8 +786,8 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Department",
-            "description": "<p>Doctor's Department.</p>"
+            "field": "Dapartment",
+            "description": "<p>Doctor's Dapartment.</p>"
           }
         ]
       }
@@ -965,12 +831,12 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/doctor/index.js",
+    "filename": "src/api/Doctor/index.js",
     "groupTitle": "Doctor"
   },
   {
     "type": "delete",
-    "url": "/doctors/:id",
+    "url": "/Doctors/:id",
     "title": "Delete doctor",
     "name": "DeleteDoctor",
     "group": "Doctor",
@@ -1025,12 +891,12 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/doctor/index.js",
+    "filename": "src/api/Doctor/index.js",
     "groupTitle": "Doctor"
   },
   {
     "type": "get",
-    "url": "/doctors/:id",
+    "url": "/Doctors/:id",
     "title": "Retrieve doctor",
     "name": "RetrieveDoctor",
     "group": "Doctor",
@@ -1093,12 +959,12 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/doctor/index.js",
+    "filename": "src/api/Doctor/index.js",
     "groupTitle": "Doctor"
   },
   {
     "type": "get",
-    "url": "/doctors",
+    "url": "/Doctors",
     "title": "Retrieve doctors",
     "name": "RetrieveDoctors",
     "group": "Doctor",
@@ -1202,12 +1068,12 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/doctor/index.js",
+    "filename": "src/api/Doctor/index.js",
     "groupTitle": "Doctor"
   },
   {
     "type": "put",
-    "url": "/doctors/:id",
+    "url": "/Doctors/:id",
     "title": "Update doctor",
     "name": "UpdateDoctor",
     "group": "Doctor",
@@ -1231,8 +1097,8 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Id",
-            "description": "<p>Doctor's Id.</p>"
+            "field": "ID",
+            "description": "<p>Doctor's ID.</p>"
           },
           {
             "group": "Parameter",
@@ -1243,8 +1109,8 @@
           {
             "group": "Parameter",
             "optional": false,
-            "field": "Department",
-            "description": "<p>Doctor's Department.</p>"
+            "field": "Dapartment",
+            "description": "<p>Doctor's Dapartment.</p>"
           }
         ]
       }
@@ -1288,7 +1154,7 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/doctor/index.js",
+    "filename": "src/api/Doctor/index.js",
     "groupTitle": "Doctor"
   },
   {

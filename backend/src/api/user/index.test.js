@@ -104,9 +104,7 @@ test('POST /users 201 (master)', async () => {
     .send({ access_token: masterKey, email: 'd@d.com', password: '123456' })
   expect(status).toBe(201)
   expect(typeof body).toBe('object')
-  expect(typeof body.user).toBe('object')
-  expect(typeof body.token).toBe('string')
-  expect(body.user.email).toBe('d@d.com')
+  expect(body.email).toBe('d@d.com')
 })
 
 test('POST /users 201 (master)', async () => {
@@ -115,9 +113,7 @@ test('POST /users 201 (master)', async () => {
     .send({ access_token: masterKey, email: 'd@d.com', password: '123456', role: 'user' })
   expect(status).toBe(201)
   expect(typeof body).toBe('object')
-  expect(typeof body.user).toBe('object')
-  expect(typeof body.token).toBe('string')
-  expect(body.user.email).toBe('d@d.com')
+  expect(body.email).toBe('d@d.com')
 })
 
 test('POST /users 201 (master)', async () => {
@@ -126,9 +122,7 @@ test('POST /users 201 (master)', async () => {
     .send({ access_token: masterKey, email: 'd@d.com', password: '123456', role: 'admin' })
   expect(status).toBe(201)
   expect(typeof body).toBe('object')
-  expect(typeof body.user).toBe('object')
-  expect(typeof body.token).toBe('string')
-  expect(body.user.email).toBe('d@d.com')
+  expect(body.email).toBe('d@d.com')
 })
 
 test('POST /users 409 (master) - duplicated email', async () => {

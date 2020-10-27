@@ -7,17 +7,17 @@ import { schema } from './model'
 export Doctor, { schema } from './model'
 
 const router = new Router()
-const { Id, Name, Department } = schema.tree
+const { ID, Name, Dapartment } = schema.tree
 
 /**
- * @api {post} /doctors Create doctor
+ * @api {post} /Doctors Create doctor
  * @apiName CreateDoctor
  * @apiGroup Doctor
  * @apiPermission admin
  * @apiParam {String} access_token admin access token.
- * @apiParam Id Doctor's Id.
+ * @apiParam ID Doctor's ID.
  * @apiParam Name Doctor's Name.
- * @apiParam Department Doctor's Department.
+ * @apiParam Dapartment Doctor's Dapartment.
  * @apiSuccess {Object} doctor Doctor's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Doctor not found.
@@ -25,11 +25,11 @@ const { Id, Name, Department } = schema.tree
  */
 router.post('/',
   token({ required: true, roles: ['admin'] }),
-  body({ Id, Name, Department }),
+  body({ ID, Name, Dapartment }),
   create)
 
 /**
- * @api {get} /doctors Retrieve doctors
+ * @api {get} /Doctors Retrieve doctors
  * @apiName RetrieveDoctors
  * @apiGroup Doctor
  * @apiPermission admin
@@ -46,7 +46,7 @@ router.get('/',
   index)
 
 /**
- * @api {get} /doctors/:id Retrieve doctor
+ * @api {get} /Doctors/:id Retrieve doctor
  * @apiName RetrieveDoctor
  * @apiGroup Doctor
  * @apiPermission admin
@@ -61,14 +61,14 @@ router.get('/:id',
   show)
 
 /**
- * @api {put} /doctors/:id Update doctor
+ * @api {put} /Doctors/:id Update doctor
  * @apiName UpdateDoctor
  * @apiGroup Doctor
  * @apiPermission admin
  * @apiParam {String} access_token admin access token.
- * @apiParam Id Doctor's Id.
+ * @apiParam ID Doctor's ID.
  * @apiParam Name Doctor's Name.
- * @apiParam Department Doctor's Department.
+ * @apiParam Dapartment Doctor's Dapartment.
  * @apiSuccess {Object} doctor Doctor's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Doctor not found.
@@ -76,11 +76,11 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true, roles: ['admin'] }),
-  body({ Id, Name, Department }),
+  body({ ID, Name, Dapartment }),
   update)
 
 /**
- * @api {delete} /doctors/:id Delete doctor
+ * @api {delete} /Doctors/:id Delete doctor
  * @apiName DeleteDoctor
  * @apiGroup Doctor
  * @apiPermission admin

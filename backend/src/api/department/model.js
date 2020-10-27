@@ -1,13 +1,13 @@
 import mongoose, { Schema } from 'mongoose'
 
 const departmentSchema = new Schema({
-  Id: {
+  ID: {
     type: String
   },
   Name: {
     type: String
   },
-  NoofDoctor: {
+  Nos: {
     type: String
   }
 }, {
@@ -23,9 +23,9 @@ departmentSchema.methods = {
     const view = {
       // simple view
       id: this.id,
-      Id: this.Id,
+      ID: this.ID,
       Name: this.Name,
-      NoofDoctor: this.NoofDoctor,
+      Nos: this.Nos,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }

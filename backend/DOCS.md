@@ -1,13 +1,13 @@
-# docter-appointment v1.0.0
+# doctor-apointment v0.0.0
 
 
 
-- [Appointment](#appointment)
-	- [Create appointment](#create-appointment)
-	- [Delete appointment](#delete-appointment)
-	- [Retrieve appointment](#retrieve-appointment)
-	- [Retrieve appointments](#retrieve-appointments)
-	- [Update appointment](#update-appointment)
+- [Apointment](#apointment)
+	- [Create apointment](#create-apointment)
+	- [Delete apointment](#delete-apointment)
+	- [Retrieve apointment](#retrieve-apointment)
+	- [Retrieve apointments](#retrieve-apointments)
+	- [Update apointment](#update-apointment)
 	
 - [Auth](#auth)
 	- [Authenticate](#authenticate)
@@ -37,82 +37,78 @@
 	
 
 
-# Appointment
+# Apointment
 
-## Create appointment
-
-
-
-	POST /appointments
-
-
-### Parameters
-
-| Name    | Type      | Description                          |
-|---------|-----------|--------------------------------------|
-| No			| 			|  <p>Appointment's No.</p>							|
-| PatientName			| 			|  <p>Appointment's PatientName.</p>							|
-| DocterName			| 			|  <p>Appointment's DocterName.</p>							|
-| Date			| 			|  <p>Appointment's Date.</p>							|
-| Time			| 			|  <p>Appointment's Time.</p>							|
-| Departent			| 			|  <p>Appointment's Departent.</p>							|
-
-## Delete appointment
+## Create apointment
 
 
 
-	DELETE /appointments/:id
+	POST /apointments
 
 
 ### Parameters
 
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>admin access token.</p>							|
+| No			| 			|  <p>Apointment's No.</p>							|
+| PatientName			| 			|  <p>Apointment's PatientName.</p>							|
+| DocterName			| 			|  <p>Apointment's DocterName.</p>							|
+| Email			| 			|  <p>Apointment's Email.</p>							|
+| PhoneNo			| 			|  <p>Apointment's PhoneNo.</p>							|
+| Date			| 			|  <p>Apointment's Date.</p>							|
+| Time			| 			|  <p>Apointment's Time.</p>							|
+| Department			| 			|  <p>Apointment's Department.</p>							|
 
-## Retrieve appointment
+## Delete apointment
 
 
 
-	GET /appointments/:id
+	DELETE /apointments/:id
 
 
-## Retrieve appointments
+## Retrieve apointment
 
 
 
-	GET /appointments
+	GET /apointments/:id
+
+
+## Retrieve apointments
+
+
+
+	GET /apointments
 
 
 ### Parameters
 
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>admin access token.</p>							|
 | q			| String			| **optional** <p>Query to search.</p>							|
 | page			| Number			| **optional** <p>Page number.</p>							|
 | limit			| Number			| **optional** <p>Amount of returned items.</p>							|
 | sort			| String[]			| **optional** <p>Order of returned items.</p>							|
 | fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
 
-## Update appointment
+## Update apointment
 
 
 
-	PUT /appointments/:id
+	PUT /apointments/:id
 
 
 ### Parameters
 
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>admin access token.</p>							|
-| No			| 			|  <p>Appointment's No.</p>							|
-| PatientName			| 			|  <p>Appointment's PatientName.</p>							|
-| DocterName			| 			|  <p>Appointment's DocterName.</p>							|
-| Date			| 			|  <p>Appointment's Date.</p>							|
-| Time			| 			|  <p>Appointment's Time.</p>							|
-| Departent			| 			|  <p>Appointment's Departent.</p>							|
+| No			| 			|  <p>Apointment's No.</p>							|
+| PatientName			| 			|  <p>Apointment's PatientName.</p>							|
+| DocterName			| 			|  <p>Apointment's DocterName.</p>							|
+| Email			| 			|  <p>Apointment's Email.</p>							|
+| PhoneNo			| 			|  <p>Apointment's PhoneNo.</p>							|
+| Date			| 			|  <p>Apointment's Date.</p>							|
+| Time			| 			|  <p>Apointment's Time.</p>							|
+| Department			| 			|  <p>Apointment's Department.</p>							|
 
 # Auth
 
@@ -140,7 +136,7 @@
 
 
 
-	POST /departments
+	POST /Departments
 
 
 ### Parameters
@@ -148,48 +144,35 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>admin access token.</p>							|
-| Id			| 			|  <p>Department's Id.</p>							|
+| ID			| 			|  <p>Department's ID.</p>							|
 | Name			| 			|  <p>Department's Name.</p>							|
-| Nos			| 			|  <p>of Doctor Department's NoofDoctor.</p>							|
+| Nos			| 			|  <p>Department's Nos.</p>							|
 
 ## Delete department
 
 
 
-	DELETE /departments/:id
+	DELETE /Departments/:id
 
-
-### Parameters
-
-| Name    | Type      | Description                          |
-|---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>admin access token.</p>							|
 
 ## Retrieve department
 
 
 
-	GET /departments/:id
+	GET /Departments/:id
 
-
-### Parameters
-
-| Name    | Type      | Description                          |
-|---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>admin access token.</p>							|
 
 ## Retrieve departments
 
 
 
-	GET /departments
+	GET /Departments
 
 
 ### Parameters
 
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>admin access token.</p>							|
 | q			| String			| **optional** <p>Query to search.</p>							|
 | page			| Number			| **optional** <p>Page number.</p>							|
 | limit			| Number			| **optional** <p>Amount of returned items.</p>							|
@@ -200,17 +183,16 @@
 
 
 
-	PUT /departments/:id
+	PUT /Departments/:id
 
 
 ### Parameters
 
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
-| access_token			| String			|  <p>admin access token.</p>							|
-| Id			| 			|  <p>Department's Id.</p>							|
+| ID			| 			|  <p>Department's ID.</p>							|
 | Name			| 			|  <p>Department's Name.</p>							|
-| Nos			| 			|  <p>of Doctor Department's NoofDoctor.</p>							|
+| Nos			| 			|  <p>Department's Nos.</p>							|
 
 # Doctor
 
@@ -218,7 +200,7 @@
 
 
 
-	POST /doctors
+	POST /Doctors
 
 
 ### Parameters
@@ -226,15 +208,15 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>admin access token.</p>							|
-| Id			| 			|  <p>Doctor's Id.</p>							|
+| ID			| 			|  <p>Doctor's ID.</p>							|
 | Name			| 			|  <p>Doctor's Name.</p>							|
-| Department			| 			|  <p>Doctor's Department.</p>							|
+| Dapartment			| 			|  <p>Doctor's Dapartment.</p>							|
 
 ## Delete doctor
 
 
 
-	DELETE /doctors/:id
+	DELETE /Doctors/:id
 
 
 ### Parameters
@@ -247,7 +229,7 @@
 
 
 
-	GET /doctors/:id
+	GET /Doctors/:id
 
 
 ### Parameters
@@ -260,7 +242,7 @@
 
 
 
-	GET /doctors
+	GET /Doctors
 
 
 ### Parameters
@@ -278,7 +260,7 @@
 
 
 
-	PUT /doctors/:id
+	PUT /Doctors/:id
 
 
 ### Parameters
@@ -286,9 +268,9 @@
 | Name    | Type      | Description                          |
 |---------|-----------|--------------------------------------|
 | access_token			| String			|  <p>admin access token.</p>							|
-| Id			| 			|  <p>Doctor's Id.</p>							|
+| ID			| 			|  <p>Doctor's ID.</p>							|
 | Name			| 			|  <p>Doctor's Name.</p>							|
-| Department			| 			|  <p>Doctor's Department.</p>							|
+| Dapartment			| 			|  <p>Doctor's Dapartment.</p>							|
 
 # User
 

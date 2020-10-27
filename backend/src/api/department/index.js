@@ -7,17 +7,17 @@ import { schema } from './model'
 export Department, { schema } from './model'
 
 const router = new Router()
-const { Id, Name, NoofDoctor } = schema.tree
+const { ID, Name, Nos } = schema.tree
 
 /**
- * @api {post} /departments Create department
+ * @api {post} /Departments Create department
  * @apiName CreateDepartment
  * @apiGroup Department
  * @apiPermission admin
  * @apiParam {String} access_token admin access token.
- * @apiParam Id Department's Id.
+ * @apiParam ID Department's ID.
  * @apiParam Name Department's Name.
- * @apiParam NoofDoctor Department's NoofDoctor.
+ * @apiParam Nos Department's Nos.
  * @apiSuccess {Object} department Department's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Department not found.
@@ -25,72 +25,56 @@ const { Id, Name, NoofDoctor } = schema.tree
  */
 router.post('/',
   token({ required: true, roles: ['admin'] }),
-  body({ Id, Name, NoofDoctor }),
+  body({ ID, Name, Nos }),
   create)
 
 /**
- * @api {get} /departments Retrieve departments
+ * @api {get} /Departments Retrieve departments
  * @apiName RetrieveDepartments
  * @apiGroup Department
- * @apiPermission admin
- * @apiParam {String} access_token admin access token.
  * @apiUse listParams
  * @apiSuccess {Number} count Total amount of departments.
  * @apiSuccess {Object[]} rows List of departments.
  * @apiError {Object} 400 Some parameters may contain invalid values.
- * @apiError 401 admin access only.
  */
 router.get('/',
-  token({ required: true, roles: ['admin'] }),
   query(),
   index)
 
 /**
- * @api {get} /departments/:id Retrieve department
+ * @api {get} /Departments/:id Retrieve department
  * @apiName RetrieveDepartment
  * @apiGroup Department
- * @apiPermission admin
- * @apiParam {String} access_token admin access token.
  * @apiSuccess {Object} department Department's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Department not found.
- * @apiError 401 admin access only.
  */
 router.get('/:id',
-  token({ required: true, roles: ['admin'] }),
   show)
 
 /**
- * @api {put} /departments/:id Update department
+ * @api {put} /Departments/:id Update department
  * @apiName UpdateDepartment
  * @apiGroup Department
- * @apiPermission admin
- * @apiParam {String} access_token admin access token.
- * @apiParam Id Department's Id.
+ * @apiParam ID Department's ID.
  * @apiParam Name Department's Name.
- * @apiParam NoofDoctor Department's NoofDoctor.
+ * @apiParam Nos Department's Nos.
  * @apiSuccess {Object} department Department's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Department not found.
- * @apiError 401 admin access only.
  */
 router.put('/:id',
-  token({ required: true, roles: ['admin'] }),
-  body({ Id, Name, NoofDoctor }),
+  body({ ID, Name, Nos }),
   update)
 
 /**
- * @api {delete} /departments/:id Delete department
+ * @api {delete} /Departments/:id Delete department
  * @apiName DeleteDepartment
  * @apiGroup Department
- * @apiPermission admin
- * @apiParam {String} access_token admin access token.
  * @apiSuccess (Success 204) 204 No Content.
  * @apiError 404 Department not found.
- * @apiError 401 admin access only.
  */
 router.delete('/:id',
-  token({ required: true, roles: ['admin'] }),
   destroy)
 
 export default router

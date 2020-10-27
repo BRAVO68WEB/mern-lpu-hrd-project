@@ -17,31 +17,31 @@ beforeEach(async () => {
   doctor = await Doctor.create({})
 })
 
-test('POST /doctors 201 (admin)', async () => {
+test('POST /Doctors 201 (admin)', async () => {
   const { status, body } = await request(app())
     .post(`${apiRoot}`)
-    .send({ access_token: adminSession, Id: 'test', Name: 'test', Department: 'test' })
+    .send({ access_token: adminSession, ID: 'test', Name: 'test', Dapartment: 'test' })
   expect(status).toBe(201)
   expect(typeof body).toEqual('object')
-  expect(body.Id).toEqual('test')
+  expect(body.ID).toEqual('test')
   expect(body.Name).toEqual('test')
-  expect(body.Department).toEqual('test')
+  expect(body.Dapartment).toEqual('test')
 })
 
-test('POST /doctors 401 (user)', async () => {
+test('POST /Doctors 401 (user)', async () => {
   const { status } = await request(app())
     .post(`${apiRoot}`)
     .send({ access_token: userSession })
   expect(status).toBe(401)
 })
 
-test('POST /doctors 401', async () => {
+test('POST /Doctors 401', async () => {
   const { status } = await request(app())
     .post(`${apiRoot}`)
   expect(status).toBe(401)
 })
 
-test('GET /doctors 200 (admin)', async () => {
+test('GET /Doctors 200 (admin)', async () => {
   const { status, body } = await request(app())
     .get(`${apiRoot}`)
     .query({ access_token: adminSession })
@@ -50,20 +50,20 @@ test('GET /doctors 200 (admin)', async () => {
   expect(Number.isNaN(body.count)).toBe(false)
 })
 
-test('GET /doctors 401 (user)', async () => {
+test('GET /Doctors 401 (user)', async () => {
   const { status } = await request(app())
     .get(`${apiRoot}`)
     .query({ access_token: userSession })
   expect(status).toBe(401)
 })
 
-test('GET /doctors 401', async () => {
+test('GET /Doctors 401', async () => {
   const { status } = await request(app())
     .get(`${apiRoot}`)
   expect(status).toBe(401)
 })
 
-test('GET /doctors/:id 200 (admin)', async () => {
+test('GET /Doctors/:id 200 (admin)', async () => {
   const { status, body } = await request(app())
     .get(`${apiRoot}/${doctor.id}`)
     .query({ access_token: adminSession })
@@ -72,79 +72,79 @@ test('GET /doctors/:id 200 (admin)', async () => {
   expect(body.id).toEqual(doctor.id)
 })
 
-test('GET /doctors/:id 401 (user)', async () => {
+test('GET /Doctors/:id 401 (user)', async () => {
   const { status } = await request(app())
     .get(`${apiRoot}/${doctor.id}`)
     .query({ access_token: userSession })
   expect(status).toBe(401)
 })
 
-test('GET /doctors/:id 401', async () => {
+test('GET /Doctors/:id 401', async () => {
   const { status } = await request(app())
     .get(`${apiRoot}/${doctor.id}`)
   expect(status).toBe(401)
 })
 
-test('GET /doctors/:id 404 (admin)', async () => {
+test('GET /Doctors/:id 404 (admin)', async () => {
   const { status } = await request(app())
     .get(apiRoot + '/123456789098765432123456')
     .query({ access_token: adminSession })
   expect(status).toBe(404)
 })
 
-test('PUT /doctors/:id 200 (admin)', async () => {
+test('PUT /Doctors/:id 200 (admin)', async () => {
   const { status, body } = await request(app())
     .put(`${apiRoot}/${doctor.id}`)
-    .send({ access_token: adminSession, Id: 'test', Name: 'test', Department: 'test' })
+    .send({ access_token: adminSession, ID: 'test', Name: 'test', Dapartment: 'test' })
   expect(status).toBe(200)
   expect(typeof body).toEqual('object')
   expect(body.id).toEqual(doctor.id)
-  expect(body.Id).toEqual('test')
+  expect(body.ID).toEqual('test')
   expect(body.Name).toEqual('test')
-  expect(body.Department).toEqual('test')
+  expect(body.Dapartment).toEqual('test')
 })
 
-test('PUT /doctors/:id 401 (user)', async () => {
+test('PUT /Doctors/:id 401 (user)', async () => {
   const { status } = await request(app())
     .put(`${apiRoot}/${doctor.id}`)
     .send({ access_token: userSession })
   expect(status).toBe(401)
 })
 
-test('PUT /doctors/:id 401', async () => {
+test('PUT /Doctors/:id 401', async () => {
   const { status } = await request(app())
     .put(`${apiRoot}/${doctor.id}`)
   expect(status).toBe(401)
 })
 
-test('PUT /doctors/:id 404 (admin)', async () => {
+test('PUT /Doctors/:id 404 (admin)', async () => {
   const { status } = await request(app())
     .put(apiRoot + '/123456789098765432123456')
-    .send({ access_token: adminSession, Id: 'test', Name: 'test', Department: 'test' })
+    .send({ access_token: adminSession, ID: 'test', Name: 'test', Dapartment: 'test' })
   expect(status).toBe(404)
 })
 
-test('DELETE /doctors/:id 204 (admin)', async () => {
+test('DELETE /Doctors/:id 204 (admin)', async () => {
   const { status } = await request(app())
     .delete(`${apiRoot}/${doctor.id}`)
     .query({ access_token: adminSession })
   expect(status).toBe(204)
 })
 
-test('DELETE /doctors/:id 401 (user)', async () => {
+test('DELETE /Doctors/:id 401 (user)', async () => {
   const { status } = await request(app())
     .delete(`${apiRoot}/${doctor.id}`)
     .query({ access_token: userSession })
   expect(status).toBe(401)
 })
 
-test('DELETE /doctors/:id 401', async () => {
+test('DELETE /Doctors/:id 401', async () => {
   const { status } = await request(app())
     .delete(`${apiRoot}/${doctor.id}`)
   expect(status).toBe(401)
 })
 
-test('DELETE /doctors/:id 404 (admin)', async () => {
+test('DELETE /Doctors/:id 404 (admin)', async () => {
   const { status } = await request(app())
     .delete(apiRoot + '/123456789098765432123456')
     .query({ access_token: adminSession })

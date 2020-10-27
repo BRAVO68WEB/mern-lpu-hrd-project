@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
 
-const appointmentSchema = new Schema({
+const apointmentSchema = new Schema({
   No: {
     type: String
   },
@@ -10,13 +10,19 @@ const appointmentSchema = new Schema({
   DocterName: {
     type: String
   },
+  Email: {
+    type: String
+  },
+  PhoneNo: {
+    type: String
+  },
   Date: {
     type: String
   },
   Time: {
     type: String
   },
-  Departent: {
+  Department: {
     type: String
   }
 }, {
@@ -27,7 +33,7 @@ const appointmentSchema = new Schema({
   }
 })
 
-appointmentSchema.methods = {
+apointmentSchema.methods = {
   view (full) {
     const view = {
       // simple view
@@ -35,9 +41,11 @@ appointmentSchema.methods = {
       No: this.No,
       PatientName: this.PatientName,
       DocterName: this.DocterName,
+      Email: this.Email,
+      PhoneNo: this.PhoneNo,
       Date: this.Date,
       Time: this.Time,
-      Departent: this.Departent,
+      Department: this.Department,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }
@@ -49,7 +57,7 @@ appointmentSchema.methods = {
   }
 }
 
-const model = mongoose.model('Appointment', appointmentSchema)
+const model = mongoose.model('Apointment', apointmentSchema)
 
 export const schema = model.schema
 export default model
