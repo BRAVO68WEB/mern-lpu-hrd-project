@@ -8,8 +8,8 @@ const apointmentSchema = new Schema(
     PatientName: {
       type: String,
     },
-    DocterName: {
-      type: String,
+    docID: {
+      type: Number,
     },
     Email: {
       type: String,
@@ -23,8 +23,8 @@ const apointmentSchema = new Schema(
     Time: {
       type: String,
     },
-    Department: {
-      type: String,
+    depID: {
+      type: Number,
     },
     Msg: {
       type: String,
@@ -51,14 +51,14 @@ apointmentSchema.methods = {
       id: this.id,
       No: this.No,
       PatientName: this.PatientName,
-      DocterName: this.DocterName,
+      docID: this.docID,
       Email: this.Email,
       PhoneNo: this.PhoneNo,
       Date: this.Date,
       Time: this.Time,
       Msg: this.Msg,
       Age: this.Age,
-      Department: this.Department,
+      depID: this.depID,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
     };

@@ -7,7 +7,7 @@ import { schema } from "./model";
 export Doctor, { schema } from "./model";
 
 const router = new Router();
-const { ID, Name, Dapartment } = schema.tree;
+const { docID, Name, Dapartment } = schema.tree;
 
 /**
  * @api {post} /Doctors Create doctor
@@ -69,7 +69,7 @@ router.get("/:id", show);
 router.put(
   "/:id",
   token({ required: true, roles: ["admin"] }),
-  body({ ID, Name, Dapartment }),
+  body({ docID, Name, Dapartment }),
   update
 );
 

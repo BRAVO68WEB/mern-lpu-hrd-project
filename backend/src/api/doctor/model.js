@@ -1,43 +1,50 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Schema } from "mongoose";
 
-const doctorSchema = new Schema({
-  ID: {
-    type: String
+const doctorSchema = new Schema(
+  {
+    docID: {
+      type: String,
+    },
+    Name: {
+      type: String,
+    },
+    Dapartment: {
+      type: String,
+    },
   },
-  Name: {
-    type: String
-  },
-  Dapartment: {
-    type: String
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: (obj, ret) => {
+        delete ret._id;
+      },
+    },
   }
-}, {
-  timestamps: true,
-  toJSON: {
-    virtuals: true,
-    transform: (obj, ret) => { delete ret._id }
-  }
-})
+);
 
 doctorSchema.methods = {
-  view (full) {
+  view(full) {
     const view = {
       // simple view
       id: this.id,
-      ID: this.ID,
+      docID: this.docID,
       Name: this.Name,
       Dapartment: this.Dapartment,
       createdAt: this.createdAt,
-      updatedAt: this.updatedAt
-    }
+      updatedAt: this.updatedAt,
+    };
 
-    return full ? {
-      ...view
-      // add properties for a full view
-    } : view
-  }
-}
+    return full
+      ? {
+          ...view,
+          // add properties for a full view
+        }
+      : view;
+  },
+};
 
-const model = mongoose.model('Doctor', doctorSchema)
+const model = mongoose.model("Doctor", doctorSchema);
 
-export const schema = model.schema
-export default model
+export const schema = model.schema;
+export default model;
