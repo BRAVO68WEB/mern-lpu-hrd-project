@@ -1,0 +1,43 @@
+.doctor{
+    /* background-color: #e6e6e6; */
+    /* background: rgba(0, 0, 0, 0.7) url('../img/doctorbg.jpeg');
+    background-size: cover;
+    background-blend-mode: darken; */
+    height: 100vh;
+}
+.doctor::before{
+    content: "";
+    background: url(../img/doctorbg.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.doctorform{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        top: 30%;
+}
+.doctorformInput{
+    width: 50%;
+    display: block;
+    margin: auto;
+    color: gray;
+    font-size: 18px;
+    margin-top: 15px;
+    padding: 3px 10px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.doctorwidthfix{
+    width: 52%;
+}

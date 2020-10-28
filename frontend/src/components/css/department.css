@@ -1,0 +1,41 @@
+.department{
+    height: 100vh;
+}
+.department::before{
+    content: "";
+    background: url(../img/departmentbg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.departmentform{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        top: 16%;
+        right: 20%;
+}
+.departmentformInput{
+    width: 50%;
+    display: block;
+    margin: auto;
+    color: gray;
+    font-size: 18px;
+    margin-top: 15px;
+    padding: 3px 10px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.departmentwidthfix{
+    width: 52%;
+}
+

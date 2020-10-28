@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.smallnav{
+    display: flex;
+    align-items: center;
+    background-color: #e8e8e4;
+}
+.smallnav-info{
+    display: flex;
+    padding: 7px 20px;
+    margin: 0 60px;
+    align-items: center;
+}
+.smallnav-info p{
+    margin: 0px 6px;
+}
+.icon{
+    display: flex;
+    position: absolute;
+    right: 5%;
+}
+.icondesign{
+    display: inline;
+    margin: 0px 6px;
+}
