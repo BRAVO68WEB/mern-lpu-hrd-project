@@ -1,12 +1,23 @@
-import { Router } from 'express'
-import { middleware as query } from 'querymen'
-import { middleware as body } from 'bodymen'
-import { create, index, show, update, destroy } from './controller'
-import { schema } from './model'
-export Apointment, { schema } from './model'
+import { Router } from "express";
+import { middleware as query } from "querymen";
+import { middleware as body } from "bodymen";
+import { create, index, show, update, destroy } from "./controller";
+import { schema } from "./model";
+export Apointment, { schema } from "./model";
 
-const router = new Router()
-const { No, PatientName, DocterName, Email, PhoneNo, Date, Time, Department } = schema.tree
+const router = new Router();
+const {
+  No,
+  PatientName,
+  DocterName,
+  Email,
+  PhoneNo,
+  Date,
+  Time,
+  Department,
+  Msg,
+  Age,
+} = schema.tree;
 
 /**
  * @api {post} /apointments Create apointment
@@ -24,9 +35,22 @@ const { No, PatientName, DocterName, Email, PhoneNo, Date, Time, Department } = 
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Apointment not found.
  */
-router.post('/',
-  body({ No, PatientName, DocterName, Email, PhoneNo, Date, Time, Department }),
-  create)
+router.post(
+  "/",
+  body({
+    No,
+    PatientName,
+    DocterName,
+    Email,
+    PhoneNo,
+    Date,
+    Time,
+    Department,
+    Msg,
+    Age,
+  }),
+  create
+);
 
 /**
  * @api {get} /apointments Retrieve apointments
@@ -37,9 +61,7 @@ router.post('/',
  * @apiSuccess {Object[]} rows List of apointments.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.get('/',
-  query(),
-  index)
+router.get("/", query(), index);
 
 /**
  * @api {get} /apointments/:id Retrieve apointment
@@ -49,8 +71,7 @@ router.get('/',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Apointment not found.
  */
-router.get('/:id',
-  show)
+router.get("/:id", show);
 
 /**
  * @api {put} /apointments/:id Update apointment
@@ -68,9 +89,22 @@ router.get('/:id',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Apointment not found.
  */
-router.put('/:id',
-  body({ No, PatientName, DocterName, Email, PhoneNo, Date, Time, Department }),
-  update)
+router.put(
+  "/:id",
+  body({
+    No,
+    PatientName,
+    DocterName,
+    Email,
+    PhoneNo,
+    Date,
+    Time,
+    Department,
+    Msg,
+    Age,
+  }),
+  update
+);
 
 /**
  * @api {delete} /apointments/:id Delete apointment
@@ -79,7 +113,6 @@ router.put('/:id',
  * @apiSuccess (Success 204) 204 No Content.
  * @apiError 404 Apointment not found.
  */
-router.delete('/:id',
-  destroy)
+router.delete("/:id", destroy);
 
-export default router
+export default router;
