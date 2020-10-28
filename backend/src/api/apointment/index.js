@@ -6,18 +6,7 @@ import { schema } from "./model";
 export Apointment, { schema } from "./model";
 
 const router = new Router();
-const {
-  No,
-  PatientName,
-  docID,
-  Email,
-  PhoneNo,
-  Date,
-  Time,
-  depID,
-  Msg,
-  Age,
-} = schema.tree;
+const { No, PatientName, Email, PhoneNo, Date, Time, Msg, Age } = schema.tree;
 
 /**
  * @api {post} /apointments Create apointment
@@ -40,12 +29,10 @@ router.post(
   body({
     No,
     PatientName,
-    docID,
     Email,
     PhoneNo,
     Date,
     Time,
-    depID,
     Msg,
     Age,
   }),
@@ -94,12 +81,10 @@ router.put(
   body({
     No,
     PatientName,
-    docID,
     Email,
     PhoneNo,
     Date,
     Time,
-    depID,
     Msg,
     Age,
   }),
