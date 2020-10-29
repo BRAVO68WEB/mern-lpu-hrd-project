@@ -21,7 +21,7 @@ class Home extends React.Component {
         <div className="firstSection background">
           <div className="main-box">
             <div className="firstHalf">
-              <p className="text-big">Your doctor your treatment</p>
+              <p className="text-big">Your Doctor! Your Treatment</p>
               <div className="text-small">
                 Proactively envisioned multimedia based expertise and
                 cross-media growth strategies. Seamlessly visualize quality

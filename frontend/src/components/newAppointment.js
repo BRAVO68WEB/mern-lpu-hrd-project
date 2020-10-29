@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios"; //BACKEND PART IMPORT IT
 import "./css/newAppointment.css";
 import Navbar from "./nav";
 import { Redirect } from "react-router";
@@ -7,14 +6,12 @@ import { API } from "../helper/apicall";
 
 const NewAppointment = () => {
   const [PatientName, setPatientName] = useState("");
-  const [DocterName, setDocterName] = useState("");
   const [Email, setEmail] = useState("");
   const [PhoneNo, setPhoneNo] = useState("");
   const [Date, setDate] = useState("");
   const [Time, setTime] = useState("");
   const [Age, setAge] = useState("");
   const [Description, setDescription] = useState("");
-  const [Department, setDepartment] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [routeRedirect, setRedirect] = useState("");
@@ -141,10 +138,9 @@ const NewAppointment = () => {
             className="formInput datetime"
             placeholder="Elaborate your problem"
             onChange={(e) => setDescription(e.target.value)}
-            name="Msg"
+            name="Description"
             required
           />
-
           <button className="btn-submit btn-dark">Submit</button>
         </form>
       </section>

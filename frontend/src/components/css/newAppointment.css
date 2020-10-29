@@ -1,59 +1,60 @@
-.appointment{
-    background-color: #e6e6e6;
-    height: 135vh;
+.appointment {
+  background-color: #e6e6e6;
+  height: 135vh;
 }
-.subHeading{
-    text-align: center;
-    padding-top: 12px;
-    font-size: 35px;
-    font-family: 'Ubuntu', sans-serif;
+.subHeading {
+  text-align: center;
+  padding-top: 12px;
+  font-size: 35px;
+  font-family: "Century Gothic", sans-serif;
+  color: rgb(233, 166, 23);
 }
-.form{
-    max-width: 80%;
-    display: block;
-    margin: 25px auto;
+.form {
+  max-width: 80%;
+  display: block;
+  margin: 25px auto;
 }
-.formInput{
-    width: 80%;
-    display: block;
-    margin: auto;
-    color: gray;
-    font-size: 18px;
-    margin-top: 15px;
-    padding: 3px 10px;
-    border: 2px solid gray;
-    border-radius: 15px;
-    outline: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.formInput {
+  width: 80%;
+  display: block;
+  margin: auto;
+  color: gray;
+  font-size: 18px;
+  margin-top: 15px;
+  padding: 3px 10px;
+  border: 2px solid gray;
+  border-radius: 15px;
+  outline: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.datetime{
-    color: gray;
+.datetime {
+  color: gray;
 }
-.widthfix{
-    width:82%;
+.widthfix {
+  width: 82%;
 }
-.btn-submit{
-    display : block;
-    font-size: 16px;
-    padding: 5px 15px;
-    border: 2px solid white;
-    border-radius: 25px;
-    background: none;
-    color: white;
-    margin: 10px auto;
-    outline: none;
-    cursor: pointer;
-    font-size: 18px;
-    font-family: 'Ubuntu', sans-serif;
+.btn-submit {
+  display: block;
+  font-size: 16px;
+  padding: 5px 15px;
+  border: 2px solid white;
+  border-radius: 25px;
+  background: none;
+  color: white;
+  margin: 10px auto;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Century Gothic", sans-serif;
 }
-.btn-dark{
-    color: black;
-    border: 2px solid gray;
+.btn-dark {
+  color: black;
+  border: 2px solid gray;
 }
-.btn-submit:hover{
-    background-color: rgb(194, 189, 189,0.54);
+.btn-submit:hover {
+  background-color: rgb(194, 189, 189, 0.54);
 }
-.note{
-    color: red;
-    text-align: center;
+.note {
+  color: red;
+  text-align: center;
 }

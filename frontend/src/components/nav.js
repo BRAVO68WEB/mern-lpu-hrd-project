@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/nav.css";
 import { NavLink } from "react-router-dom";
+import banner from "./img/banner.png";
 class Nav extends React.Component {
   render() {
     let authuser = sessionStorage.getItem("Key_Veriable");
@@ -9,10 +10,7 @@ class Nav extends React.Component {
         <nav className="navbar  background">
           <ul className="nav-list ">
             <div className="logo">
-              <img
-                src="http://medicare.bold-themes.com/general-hospital/wp-content/uploads/sites/14/2018/03/general-hospital-logo-color.png"
-                alt="logo"
-              />
+              <img src={banner} alt="logo" />
             </div>
             <li>
               <NavLink
@@ -57,10 +55,7 @@ class Nav extends React.Component {
         <nav className="navbar h-nav-resp background">
           <ul className="nav-list v-className-resp">
             <div className="logo">
-              <img
-                src="http://medicare.bold-themes.com/general-hospital/wp-content/uploads/sites/14/2018/03/general-hospital-logo-color.png"
-                alt="logo"
-              />
+              <img src={banner} alt="logo" />
             </div>
             <li>
               <NavLink
