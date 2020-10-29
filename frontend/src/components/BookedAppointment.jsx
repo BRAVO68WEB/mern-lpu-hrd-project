@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './nav'
-import "../components/css/boostrap.css";
-import '../components/css/adminNav.css'
+import "../components/css/bookAppointment.css";
 import { API } from "../helper/apicall";
 import Axios from 'axios';
     import { Redirect } from 'react-router';
