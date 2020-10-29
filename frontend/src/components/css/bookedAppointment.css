@@ -1,0 +1,13 @@
+table, th, td {
+    border: 2px solid #a59f9f;
+    margin-right: auto;
+    margin-left: auto;
+    width: 75%;
+    padding: 5px 15px;
+    text-align: center;
+    border-spacing: 1.5px 1.5px;
+    border-collapse: collapse;
+}
+th{
+width: 100%;
+}
