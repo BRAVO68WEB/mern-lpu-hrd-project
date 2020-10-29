@@ -141,7 +141,7 @@ const NewAppointment = () => {
             className="formInput datetime"
             placeholder="Elaborate your problem"
             onChange={(e) => setDescription(e.target.value)}
-            name="Description"
+            name="Msg"
             required
           />
 
