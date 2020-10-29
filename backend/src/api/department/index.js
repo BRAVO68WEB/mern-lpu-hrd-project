@@ -1,13 +1,13 @@
-import { Router } from "express";
-import { middleware as query } from "querymen";
-import { middleware as body } from "bodymen";
-import { token } from "../../services/passport";
-import { create, index, show, update, destroy } from "./controller";
-import { schema } from "./model";
-export Department, { schema } from "./model";
+import { Router } from 'express'
+import { middleware as query } from 'querymen'
+import { middleware as body } from 'bodymen'
+import { token } from '../../services/passport'
+import { create, index, show, update, destroy } from './controller'
+import { schema } from './model'
+export Department, { schema } from './model'
 
-const router = new Router();
-const { depID, Name, Nos } = schema.tree;
+const router = new Router()
+const { ID, Name, Nos } = schema.tree
 
 /**
  * @api {post} /Departments Create department
@@ -23,12 +23,10 @@ const { depID, Name, Nos } = schema.tree;
  * @apiError 404 Department not found.
  * @apiError 401 admin access only.
  */
-router.post(
-  "/",
-  token({ required: true, roles: ["admin"] }),
-  body({ depID, Name, Nos }),
-  create
-);
+router.post('/',
+  token({ required: true, roles: ['admin'] }),
+  body({ ID, Name, Nos }),
+  create)
 
 /**
  * @api {get} /Departments Retrieve departments
@@ -39,7 +37,9 @@ router.post(
  * @apiSuccess {Object[]} rows List of departments.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.get("/", query(), index);
+router.get('/',
+  query(),
+  index)
 
 /**
  * @api {get} /Departments/:id Retrieve department
@@ -49,7 +49,8 @@ router.get("/", query(), index);
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Department not found.
  */
-router.get("/:id", show);
+router.get('/:id',
+  show)
 
 /**
  * @api {put} /Departments/:id Update department
@@ -62,7 +63,9 @@ router.get("/:id", show);
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Department not found.
  */
-router.put("/:id", body({ depID, Name, Nos }), update);
+router.put('/:id',
+  body({ ID, Name, Nos }),
+  update)
 
 /**
  * @api {delete} /Departments/:id Delete department
@@ -71,6 +74,7 @@ router.put("/:id", body({ depID, Name, Nos }), update);
  * @apiSuccess (Success 204) 204 No Content.
  * @apiError 404 Department not found.
  */
-router.delete("/:id", destroy);
+router.delete('/:id',
+  destroy)
 
-export default router;
+export default router

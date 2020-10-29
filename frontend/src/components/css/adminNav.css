@@ -46,3 +46,10 @@
     background-size: cover;
     background-blend-mode: darken;
 }
+
+.mb-10{
+    margin-bottom: 80rem !important;
+}
+.table{
+    margin:10rem !important
+}

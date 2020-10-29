@@ -4,8 +4,8 @@ class Footer extends React.Component {
   render() {
     return (
       <div>
-        <footer class="background">
-          <p class="text-footer">
+        <footer className="background">
+          <p className="text-footer">
             CopyRight &copy; www.Medicare.com..All Right are Reserved.
           </p>
         </footer>
