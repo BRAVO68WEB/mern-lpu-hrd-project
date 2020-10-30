@@ -7,7 +7,7 @@
 th{
 width: 100%;
 }
-.btn{
+.btn-booked{
         color: black;
         background-color: red;
         border-radius: 2;
@@ -16,7 +16,7 @@ width: 100%;
         outline: none;
         cursor: pointer;
 }
-.btn:hover{
+.btn-booked:hover{
     color: white;
 }
  th, td {
