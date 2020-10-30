@@ -70,7 +70,7 @@ function BookedAppointment(props) {
                   <td className="text-center">
                     <button
                       onClick={() => removeData(item.id)}
-                      className="btn btn-danger"
+                      className="btn-booked btn-danger"
                     >
                       Delete
                     </button>
