@@ -26,7 +26,7 @@ Deployed at [Netlify](https://oniline-doctor-app-sys.netlify.app)
 
 ## Contributors
 
-- Prakhar
+- Prakhar Rai
 - Ashish Bhandari
 - Jyotirmoy Bandyopadhayaya
 - Akhil Bharthwal
