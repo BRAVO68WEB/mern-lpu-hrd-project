@@ -38,7 +38,7 @@ function BookedAppointment(props) {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="container">
+      <div className="container-booked">
         <table className="table table-responsive">
           <thead className="text-dark">
             <tr>
